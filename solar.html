@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solar Energy</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #eef4f8;
+  color: #333;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(90deg, #ffb703, #fb8500);
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+  position: relative;
+}
+
+/* SUN */
+.sun {
+  width: 110px;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0); }
+  to { transform: rotate(360deg); }
+}
+
+/* NAV */
+nav {
+  background: #023047;
+  text-align: center;
+  padding: 12px;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 25px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* TITLES */
+h2 {
+  color: #fb8500;
+  margin-top: 30px;
+}
+
+/* HIGHLIGHT */
+.highlight {
+  background: #ffe8a1;
+  border-left: 5px solid #fb8500;
+  padding: 12px;
+  margin: 20px 0;
+  border-radius: 6px;
+}
+
+/* PANEL CENTER FIX */
+.panel {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+/* FOOTER */
+footer {
+  background: #023047;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Solar Energy</h1>
+  <p>Clean and renewable energy for the future</p>
+
+  <!-- SUN -->
+  <svg class="sun" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="25" fill="yellow"/>
+    <g stroke="yellow" stroke-width="5">
+      <line x1="50" y1="0" x2="50" y2="20"/>
+      <line x1="50" y1="80" x2="50" y2="100"/>
+      <line x1="0" y1="50" x2="20" y2="50"/>
+      <line x1="80" y1="50" x2="100" y2="50"/>
+      <line x1="15" y1="15" x2="30" y2="30"/>
+      <line x1="70" y1="70" x2="85" y2="85"/>
+      <line x1="15" y1="85" x2="30" y2="70"/>
+      <line x1="70" y1="30" x2="85" y2="15"/>
+    </g>
+  </svg>
+</header>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solar Energy</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f7f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(90deg, #ffb703, #fb8500);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    nav {
+      background: #023047;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #fb8500;
+      margin-top: 30px;
+    }
+
+    footer {
+      background: #023047;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    .highlight {
+      background: #ffe8a1;
+      padding: 10px;
+      border-left: 5px solid #fb8500;
+      margin: 20px 0;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+
+<nav>
+  <a href="#what-is">What is it</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#advantages">Advantages</a>
+  <a href="#challenges">Challenges</a>
+  <a href="#future">Future</a>
+</nav>
+
+<div class="container">
+
+  <section id="what-is">
+    <h2>What is Solar Energy?</h2>
+    <p>
+      Solar energy is a form of energy obtained from sunlight and heat from the sun.
+      It is considered a renewable source because the sun is a virtually inexhaustible
+      source of energy. This technology allows solar radiation to be converted into
+      electricity or usable heat for homes, businesses, and industries.
+    </p>
+
+    <div class="highlight">
+      Solar energy is one of the main alternatives to reduce dependence on fossil fuels.
+    </div>
+  </section>
+
+  <section id="how-it-works">
+    <h2>How does it work?</h2>
+    <p>
+      Solar energy generation mainly occurs through solar panels, also known as
+      photovoltaic modules. These panels capture sunlight and convert it into electricity
+      through the photovoltaic effect.
+    </p>
+
+    <p>
+      There are two main types of systems:
+    </p>
+
+    <ul>
+      <li><strong>Photovoltaic System:</strong> generates electricity.</li>
+      <li><strong>Solar Thermal System:</strong> used for heating water.</li>
+    </ul>
+
+    <p>
+      The electricity generated can be used immediately or stored in batteries
+      for later use.
+    </p>
+  </section>
+
+  <section id="advantages">
+    <h2>Advantages of Solar Energy</h2>
+    <p>
+      Solar energy offers several advantages that make it one of the most promising
+      energy sources in the world:
+    </p>
+
+    <ul>
+      <li>Renewable and inexhaustible source</li>
+      <li>Reduction in electricity bills</li>
+      <li>Low environmental impact</li>
+      <li>Simple maintenance</li>
+      <li>Increases property value</li>
+    </ul>
+
+    <p>
+      In addition, using solar energy directly contributes to reducing greenhouse
+      gas emissions.
+    </p>
+  </section>
+
+  <section id="challenges">
+    <h2>Challenges and Limitations</h2>
+    <p>
+      Despite its advantages, solar energy still faces some important challenges:
+    </p>
+
+    <ul>
+      <li>High initial installation cost</li>
+      <li>Dependence on sunlight (weather conditions)</li>
+      <li>Need for space to install panels</li>
+    </ul>
+
+    <p>
+      With technological advances, these challenges are gradually being reduced,
+      making solar energy increasingly accessible.
+    </p>
+  </section>
+
+  <section id="future">
+    <h2>The Future of Solar Energy</h2>
+    <p>
+      The future of solar energy is extremely promising. With increasing investments
+      in technology and innovation, this energy source is expected to become more
+      efficient and affordable.
+    </p>
+
+    <p>
+      Many countries are already adopting policies to encourage clean energy use,
+      and solar energy plays a fundamental role in this global energy transition.
+    </p>
+
+    <div class="highlight">
+      Solar energy will be one of the main drivers of a sustainable transformation of our planet.
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p>© 2026 - Solar Energy Project</p>
+</footer>
+
+</body>
+</html>

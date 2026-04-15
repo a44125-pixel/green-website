@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wind Energy</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #eef4f8;
+  color: #333;
+}
+
+/* HEADER */
+
+header {
+  background: linear-gradient(90deg, #8ecae6, #219ebc);
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+  position: relative;
+}
+
+/* WIND TURBINE ANIMATION */
+.turbine {
+  width: 120px;
+  position: absolute;
+  right: 30px;
+  top: 10px;
+}
+
+.blades {
+  transform-origin: 50% 40%;
+  animation: spin 2.5s linear infinite;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* NAV */
+nav {
+  background: #023047;
+  text-align: center;
+  padding: 12px;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 25px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* TITLES */
+h2 {
+  color: #219ebc;
+  margin-top: 30px;
+}
+
+/* HIGHLIGHT */
+.highlight {
+  background: #d9f0ff;
+  border-left: 5px solid #219ebc;
+  padding: 12px;
+  margin: 20px 0;
+  border-radius: 6px;
+}
+
+/* FOOTER */
+footer {
+  background: #023047;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Wind Energy</h1>
+  <p>Clean energy powered by the wind</p>
+
+  <svg class="turbine" viewBox="0 0 100 100">
+    <rect x="47" y="40" width="6" height="50" fill="white"/>
+    
+    <circle cx="50" cy="40" r="5" fill="white"/>
+    
+    <g class="blades">
+      <polygon points="50,10 54,40 46,40" fill="white"/> <polygon points="80,40 50,44 50,36" fill="white"/> <polygon points="50,70 54,40 46,40" fill="white"/> <polygon points="20,40 50,44 50,36" fill="white"/> </g>
+  </svg>
+</header>
+
+<nav>
+  <a href="#what">What is it</a>
+  <a href="#how">How it works</a>
+  <a href="#adv">Advantages</a>
+  <a href="#chal">Challenges</a>
+  <a href="#future">Future</a>
+</nav>
+
+<div class="container">
+
+<h2 id="what">What is Wind Energy?</h2>
+<p>
+Wind energy is a renewable source of energy that uses the force of the wind to generate electricity.
+It is one of the fastest-growing clean energy sources in the world.
+</p>
+
+<p>
+Wind power does not produce greenhouse gases, making it an environmentally friendly alternative
+to fossil fuels.
+</p>
+
+<div class="highlight">
+Wind energy helps reduce pollution and supports a sustainable future.
+</div>
+
+<h2 id="how">How does it work?</h2>
+<p>
+Wind turbines capture the kinetic energy of moving air. When the wind blows,
+it turns the blades of the turbine, which spin a generator to produce electricity.
+</p>
+
+<h2 id="adv">Advantages</h2>
+<ul>
+  <li>Renewable and clean energy</li>
+  <li>No air pollution</li>
+  <li>Low operating costs</li>
+  <li>Reduces dependence on fossil fuels</li>
+</ul>
+
+<h2 id="chal">Challenges</h2>
+<ul>
+  <li>Depends on wind availability</li>
+  <li>Visual and noise impact</li>
+  <li>High initial investment</li>
+</ul>
+
+<h2 id="future">The Future</h2>
+<p>
+Wind energy is expected to grow rapidly as technology improves and costs decrease.
+It plays a crucial role in the global transition to renewable energy.
+</p>
+
+<div class="highlight">
+Wind power is key to building a cleaner and more sustainable world.
+</div>
+
+</div>
+
+<footer>
+© 2026 Wind Energy Project
+</footer>
+
+</body>
+</html>
