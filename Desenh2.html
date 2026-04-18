@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        :root {
+            --sky: #f0f9ff;
+            --turbine-metal: #64748b;
+            --blades: #ffffff;
+            --house: #f8fafc;
+            --light: #fde047;
+            --grass: #22c55e;
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #cbd5e1;
+            font-family: sans-serif;
+        }
+
+        .container {
+            position: relative;
+            width: 600px;
+            height: 350px;
+            background: var(--sky);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        /* Vento */
+        .wind {
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: rgba(255,255,255,0.7);
+            border-radius: 10px;
+            animation: blow 1.5s infinite linear;
+        }
+        .w1 { top: 60px; left: -50px; }
+        .w2 { top: 100px; left: -80px; animation-delay: 0.4s; }
+        .w3 { top: 140px; left: -30px; animation-delay: 0.8s; }
+
+        @keyframes blow {
+            to { transform: translateX(700px); }
+        }
+
+        /* Estrutura do Aerogerador */
+        .turbine-group {
+            position: absolute;
+            bottom: 60px;
+            left: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .tower {
+            width: 8px;
+            height: 140px;
+            background: var(--turbine-metal);
+            border-radius: 4px 4px 0 0;
+        }
+
+        /* O "Nariz" da turbina (centro onde as pás encaixam) */
+        .hub {
+            position: absolute;
+            top: -5px;
+            width: 16px;
+            height: 16px;
+            background: #475569;
+            border-radius: 50%;
+            z-index: 5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Rotação das Pás */
+        .blades-spin {
+            width: 0; height: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: spin 2s infinite linear;
+        }
+
+        .blade {
+            position: absolute;
+            width: 6px;
+            height: 70px;
+            background: var(--blades);
+            border: 1px solid #cbd5e1;
+            border-radius: 100% 100% 20% 20%;
+            transform-origin: bottom center;
+            bottom: 0; /* Alinhado ao centro do hub */
+        }
+        .b1 { transform: rotate(0deg) translateY(-10px); }
+        .b2 { transform: rotate(120deg) translateY(-10px); }
+        .b3 { transform: rotate(240deg) translateY(-10px); }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Fio e Casa */
+        .wire {
+            position: absolute;
+            bottom: 60px;
+            left: 154px;
+            width: 246px;
+            height: 2px;
+            background: #334155;
+        }
+
+        .house {
+            position: absolute;
+            bottom: 60px;
+            right: 100px;
+            width: 100px;
+            height: 80px;
+            background: var(--house);
+            border: 2px solid #cbd5e1;
+        }
+
+        .roof {
+            position: absolute;
+            top: -40px;
+            left: -10px;
+            border-left: 60px solid transparent;
+            border-right: 60px solid transparent;
+            border-bottom: 40px solid #ef4444;
+        }
+
+        .window {
+            position: absolute;
+            top: 25px;
+            left: 35px;
+            width: 30px;
+            height: 30px;
+            background: #475569;
+            animation: lightOn 1s infinite alternate;
+        }
+
+        @keyframes lightOn {
+            to { background: var(--light); box-shadow: 0 0 15px var(--light); }
+        }
+
+        .ground {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            background: var(--grass);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="wind w1"></div>
+        <div class="wind w2"></div>
+        <div class="wind w3"></div>
+        
+        <div class="ground"></div>
+
+        <!-- Aerogerador Corrigido -->
+        <div class="turbine-group">
+            <div class="hub">
+                <div class="blades-spin">
+                    <div class="blade b1"></div>
+                    <div class="blade b2"></div>
+                    <div class="blade b3"></div>
+                </div>
+            </div>
+            <div class="tower"></div>
+        </div>
+
+        <div class="wire"></div>
+
+        <div class="house">
+            <div class="roof"></div>
+            <div class="window"></div>
+        </div>
+    </div>
+
+</body>
+</html>

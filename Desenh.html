@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        :root {
+            --sky: #a5f3fc;
+            --sun: #fbbf24;
+            --sun-glow: rgba(251, 191, 36, 0.4);
+            --house: #f8fafc;
+            --roof: #475569;
+            --panel: #1e3a8a;
+            --grass: #22c55e;
+            --ray-color: rgba(251, 191, 36, 0.6);
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f1f5f9;
+        }
+
+        /* Área do Desenho */
+        .canvas {
+            position: relative;
+            width: 500px;
+            height: 400px;
+            background: var(--sky);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Sol Animado */
+        .sun {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            width: 70px;
+            height: 70px;
+            background: var(--sun);
+            border-radius: 50%;
+            box-shadow: 0 0 50px var(--sun-glow);
+            animation: pulse 4s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); filter: brightness(1); }
+            50% { transform: scale(1.1); filter: brightness(1.2); }
+        }
+
+        /* Raios de Energia */
+        .energy-ray {
+            position: absolute;
+            width: 3px;
+            height: 80px;
+            background: linear-gradient(to bottom, transparent, var(--ray-color));
+            top: 110px;
+            left: 100px;
+            transform: rotate(145deg);
+            animation: travel 2s infinite linear;
+            opacity: 0;
+        }
+
+        .ray-2 { left: 150px; animation-delay: 0.6s; }
+        .ray-3 { left: 200px; animation-delay: 1.2s; }
+
+        @keyframes travel {
+            0% { transform: rotate(145deg) translateY(-50px); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: rotate(145deg) translateY(150px); opacity: 0; }
+        }
+
+        /* Casa */
+        .house {
+            position: absolute;
+            bottom: 60px;
+            right: 60px;
+            width: 180px;
+            height: 130px;
+            background: var(--house);
+            box-shadow: inset -10px 0 20px rgba(0,0,0,0.05);
+        }
+
+        .roof {
+            position: absolute;
+            top: -60px;
+            left: -10px;
+            width: 200px;
+            height: 60px;
+            background: var(--roof);
+            clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+        }
+
+        /* Painéis Solares */
+        .solar-panel {
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 45px;
+            background: var(--panel);
+            border: 2px solid #fff;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+            padding: 2px;
+        }
+
+        .cell {
+            background: rgba(255, 255, 255, 0.1);
+            border: 0.5px solid rgba(255,255,255,0.2);
+        }
+
+        /* Efeito de brilho no painel */
+        .solar-panel::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.2) 50%, transparent 70%);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Chão */
+        .ground {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            background: var(--grass);
+        }
+
+        /* Janela (para dar detalhe) */
+        .window {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            width: 40px;
+            height: 40px;
+            background: #bae6fd;
+            border: 3px solid #64748b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="canvas">
+        <div class="sun"></div>
+        
+        <!-- Raios de luz -->
+        <div class="energy-ray ray-1"></div>
+        <div class="energy-ray ray-2"></div>
+        <div class="energy-ray ray-3"></div>
+
+        <div class="house">
+            <div class="roof">
+                <div class="solar-panel">
+                    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+                    <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+                </div>
+            </div>
+            <div class="window"></div>
+        </div>
+
+        <div class="ground"></div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        :root {
+            --water: #3b82f6;
+            --wheel: #78350f;
+            --house: #f1f5f9;
+            --light-off: #475569;
+            --light-on: #fde047;
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #e2e8f0;
+            font-family: sans-serif;
+        }
+
+        .container {
+            position: relative;
+            width: 600px;
+            height: 300px;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        /* Rio / Corrente de Água */
+        .river {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 80px;
+            background: var(--water);
+            overflow: hidden;
+        }
+
+        .waves {
+            position: absolute;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: flow 2s infinite linear;
+        }
+
+        @keyframes flow {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0%); }
+        }
+
+        /* Roda D'água */
+        .wheel-container {
+            position: absolute;
+            bottom: 40px;
+            left: 100px;
+            width: 120px;
+            height: 120px;
+            z-index: 2;
+        }
+
+        .wheel {
+            width: 100%;
+            height: 100%;
+            border: 8px solid var(--wheel);
+            border-radius: 50%;
+            position: relative;
+            animation: spin 3s infinite linear;
+        }
+
+        /* Pás da roda */
+        .blade {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 60px;
+            height: 4px;
+            background: var(--wheel);
+            transform-origin: left;
+        }
+        .b1 { transform: rotate(0deg); }
+        .b2 { transform: rotate(45deg); }
+        .b3 { transform: rotate(90deg); }
+        .b4 { transform: rotate(135deg); }
+        .b5 { transform: rotate(180deg); }
+        .b6 { transform: rotate(225deg); }
+        .b7 { transform: rotate(270deg); }
+        .b8 { transform: rotate(315deg); }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Fio Elétrico */
+        .wire {
+            position: absolute;
+            bottom: 100px;
+            left: 220px;
+            width: 180px;
+            height: 2px;
+            background: #334155;
+        }
+
+        /* Casa */
+        .house {
+            position: absolute;
+            bottom: 80px;
+            right: 100px;
+            width: 100px;
+            height: 80px;
+            background: var(--house);
+            border: 2px solid #cbd5e1;
+        }
+
+        .roof {
+            position: absolute;
+            top: -40px;
+            left: -10px;
+            width: 0;
+            height: 0;
+            border-left: 60px solid transparent;
+            border-right: 60px solid transparent;
+            border-bottom: 40px solid #ef4444;
+        }
+
+        /* Janela que brilha */
+        .window {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            width: 30px;
+            height: 30px;
+            background: var(--light-off);
+            border: 2px solid #334155;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { background: var(--light-off); box-shadow: none; }
+            to { background: var(--light-on); box-shadow: 0 0 15px var(--light-on); }
+        }
+
+        .label {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            text-align: center;
+            color: #64748b;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Água -->
+        <div class="river">
+            <div class="waves"></div>
+        </div>
+
+        <!-- Gerador (Roda) -->
+        <div class="wheel-container">
+            <div class="wheel">
+                <div class="blade b1"></div>
+                <div class="blade b2"></div>
+                <div class="blade b3"></div>
+                <div class="blade b4"></div>
+                <div class="blade b5"></div>
+                <div class="blade b6"></div>
+                <div class="blade b7"></div>
+                <div class="blade b8"></div>
+            </div>
+        </div>
+
+        <!-- Conexão -->
+        <div class="wire"></div>
+
+        <!-- Consumo (Casa) -->
+        <div class="house">
+            <div class="roof"></div>
+            <div class="window"></div>
+        </div>
+    </div>
+
+</body>
+</html>
